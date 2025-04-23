@@ -28,13 +28,13 @@ function Simplii() {
     return <>
         <h1>Simplii: AI-Powered text simplificator</h1>
         <div className='to-process'>
-            <p>To be simplified: </p>
+            <h2>To be simplified:</h2>
             <textarea placeholder='Text to be simplified' ref={inputTextAreaRef}
             onChange={(e) => handleTextInput(e)}>
             </textarea>
         </div>
         <div className='processed'>
-            <p>Simplified Text: </p>
+            <h2>Simplified Text: </h2>
             <textarea readOnly value={simplifiedText} placeholder='Simplified Text Goes here'></textarea>
         </div>
         <button onClick={handleSimplifyText}>Simplify!</button>
