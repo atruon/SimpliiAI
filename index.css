@@ -1,0 +1,36 @@
+
+
+h1 {
+    color:hsl(190, 40%, 59%);
+    font-size: 1rem;
+}
+
+body {
+    background-color: hsl(175, 29%, 26%);;
+    color:hsl(180, 54%, 73%);
+    font-family: monospace, sans-serif;
+    align-items: center;
+}
+
+textarea {
+    min-width: 250px;
+    overflow: hidden;
+    resize: none;
+    font-size: 0.90rem;
+}
+
+.to-process {
+    margin: 10px;
+    font-size:1rem;
+}
+
+.processed {
+    font-size: 1rem;
+    margin: 10px
+}
+
+button {
+    font-size:1rem;
+    margin: 10px;
+    cursor: pointer;
+}
