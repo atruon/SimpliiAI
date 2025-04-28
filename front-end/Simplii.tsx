@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
+import axios from 'axios'
+import 'dotenv/config'
 
 
 
@@ -6,22 +8,31 @@ function Simplii() {
     const [simplifiedText, setSimplifiedText] = useState("");
     const [inputText, setInputText] = useState("")
     const inputTextAreaRef = useRef(null);
+    const outputTextAreaRef = useRef(null);
 
     useEffect(() => {
         if ((inputTextAreaRef.current)) {
             inputTextAreaRef.current.style.height = 'auto';
             inputTextAreaRef.current.style.height = `${inputTextAreaRef.current.scrollHeight}px`
         }
-    }, [inputText])
+        
+        if ((outputTextAreaRef.current)) {
+            outputTextAreaRef.current.style.height = 'auto';
+            outputTextAreaRef.current.style.height = `${outputTextAreaRef.current.scrollHeight}px`
+        }
+        
+    }, [inputText, simplifiedText])
 
     function handleTextInput(e) {
-        setInputText(i => e.target.value)
+        setInputText(() => e.target.value)
     }
 
 
-    function handleSimplifyText() {
-        setSimplifiedText(s => "Simplified Text!")
-        console.log("Simplified the text!")
+    async function handleSimplifyText() {
+        const res = await axios.post(process.env.PLASMO_PUBLIC_LOCAL_HOST, {
+            prompt:inputText
+        })
+        setSimplifiedText(() => res.data.processed)
     }
 
 
@@ -35,7 +46,9 @@ function Simplii() {
         </div>
         <div className='processed'>
             <h2>Simplified Text: </h2>
-            <textarea readOnly value={simplifiedText} placeholder='Simplified Text Goes here'></textarea>
+            <textarea readOnly value={simplifiedText} placeholder='Simplified Text Goes here'
+            ref={outputTextAreaRef}>
+            </textarea>
         </div>
         <button onClick={handleSimplifyText}>Simplify!</button>
     </>

@@ -2,14 +2,25 @@
   "name": "simplii-ai",
   "displayName": "Simplii ai",
   "version": "0.0.1",
-  "description": "AI-powered text simplificator",
+  "description": "AI-powered Vocabulary Assistant",
   "author": "Anson Truong",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
     "package": "plasmo package"
   },
+  "permissions": [
+    "contextMenus"
+  ],
+  "icons": {
+    "16": "assets/icon-16x16.png",
+    "32": "assets/icon-32x32.png",
+    "48": "assets/icon-48x48.png",
+    "128": "assets/icon-128x128.png"
+  }
   "dependencies": {
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
     "plasmo": "0.90.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
