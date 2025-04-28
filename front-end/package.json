@@ -17,7 +17,7 @@
     "32": "assets/icon-32x32.png",
     "48": "assets/icon-48x48.png",
     "128": "assets/icon-128x128.png"
-  }
+  },
   "dependencies": {
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
