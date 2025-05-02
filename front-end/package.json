@@ -9,9 +9,6 @@
     "build": "plasmo build",
     "package": "plasmo package"
   },
-  "permissions": [
-    "contextMenus"
-  ],
   "icons": {
     "16": "assets/icon-16x16.png",
     "32": "assets/icon-32x32.png",
@@ -37,6 +34,7 @@
   "manifest": {
     "host_permissions": [
       "https://*/*"
-    ]
+    ],
+    "permissions": ["contextMenus", "storage"]
   }
 }
